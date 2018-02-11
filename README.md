@@ -1,2 +1,2 @@
-# Angular-Module2
-Module2 of course 5 angularJs
+# Coursera-ng1
+ng1 from st john hopkins university
