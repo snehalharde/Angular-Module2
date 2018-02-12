@@ -41,45 +41,36 @@ angular.module('ShoppingListCheckOff', [])
             
                 ShoppingListService.removeItem(shoppingList, Itemindex);
 
-           }; 
-        toBuy.msg = "Everything is bought.";
-        console.log("inside to buy")    
-         
-        
+           }
         
     }
     
+    //second controller
    AlreadyBoughtController.$inject = ['ShoppingListService'];
     function AlreadyBoughtController (ShoppingListService){
         var boughtIt = this;       
-        boughtIt.shoppingList = shoppingList;
+        this.shoppingList = shoppingList;
         boughtIt.getItem = ShoppingListService.getItem();
-         console.log("inside to already")   
-        boughtIt.msg = "Nothing bought yet.";
+       
     }
     
+    //service functions
     function ShoppingListService(){
         var service = this;
         
         var items=[];
-        
-        service.addItem = function(list){
-            return list;
-        }
-            
+                    
         service.removeItem = function(list, $index){ 
            items.push(list[$index])
            list.splice($index,1);  
-            console.log("inside to service remove")   
+             
             }
         
         service.getItem = function(){
-             console.log("inside to service get")   
+             
             return items;
             
         }
-        
-
     }
     
 })();

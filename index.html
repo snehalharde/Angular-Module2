@@ -40,20 +40,20 @@
      <h2>To Buy:</h2>
      <ol>
          <li ng-repeat="item in toBuy.shoppingList;">Buy {{item.quantity}} {{item.name}}
-             <button ng-click="toBuy.removeItem(toBuy.shoppingList,$index);"  class="btn btn-default">
+             <button ng-click="toBuy.removeItem(shoppingList,$index);"  class="btn btn-default">
              <span class="glyphicon glyphicon-ok"></span> Bought</button></li>
          <br>
      </ol>
-     <div class="emptyMessage">{{toBuy.msg}}</div>
+     <div ng-show="toBuy.shoppingList.length" class="emptyMessage">Everything is bought.</div>
     </div>
 </div>
     <!-- Already Bought List -->
     <div class="col-md-6" ng-controller='AlreadyBoughtController as boughtIt'>
      <h2>Already Bought:</h2>
      <ul>
-       <li ng-repeat ='item in boughtIt.getItem'>Bought {{item.quantity}} of  {{item.name}}</li>
+       <li  ng-repeat ='item in boughtIt.getItem'>Bought {{item.quantity}} of  {{item.name}}</li>
      </ul>
-     <div ng-show ='boughtIt.getItem == 0' class="emptyMessage">{{boughtIt.msg}}</div>
+     <div ng-show ='items == undefined' class="emptyMessage">Nothing bought yet.</div>
     </div>
   
 </div>
